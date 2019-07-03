@@ -1,0 +1,64 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": [
+    "react",
+    "immutable",
+    "import",
+    "prettier",
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "immutable/no-let": 2,
+    "immutable/no-mutation": 2,
+    "immutable/no-this": 2,
+    "import/named": 2,
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": [
+          "**/__tests__/**/*.js",
+          "**/__tests__/**/*.jsx",
+          "src/modules/spa/utils/redux-test-helper.js",
+          "src/setupTests.js",
+          "src/packages/eh-test-helper/**/**.js"
+        ]
+      }
+    ],
+    "import/no-unresolved": [2, {commonjs: true, amd: true}],
+    "import/prefer-default-export": 1,
+    "jsx-a11y/anchor-has-content": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-console": 2,
+    "no-var": 2,
+    "prefer-const": 2,
+    "react/forbid-prop-types": 0,
+    "react/jsx-filename-extension": 0,
+    "react/no-array-index-key": 1,
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "camelcase": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/label-has-for": 0,
+  },
+  settings: {
+    import/core-modules: [ eh-test-helper ],
+    "import/resolver": {
+      "node": {
+        "paths" : [
+          "src/packages"
+        ]
+      }
+    }
+  }
+}
